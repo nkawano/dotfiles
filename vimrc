@@ -294,7 +294,7 @@ nnoremap ; :
 nnoremap : ;
 noremap j gj
 noremap k gk
-nnoremap <CR> o<Esc>
+" nnoremap <CR> o<Esc>
 
 
 map <silent> w <Plug>CamelCaseMotion_w
