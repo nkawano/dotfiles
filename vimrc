@@ -273,9 +273,6 @@ NeoBundle 'vim-scripts/Wombat'
 NeoBundle 'vim-scripts/rdark'
 NeoBundle 'tomasr/molokai'
 
-colorscheme molokai
-let g:molokai_original=1
-highlight CursorLine cterm=underline
 
 call neobundle#end()
 "
@@ -287,6 +284,10 @@ filetype plugin indent on
 "                                  " this will conveniently prompt you to
 "                                  install them.
 NeoBundleCheck
+
+colorscheme molokai
+let g:molokai_original=1
+highlight CursorLine cterm=underline
 
 " ======================== originam key maps ====================
 nnoremap ; :
