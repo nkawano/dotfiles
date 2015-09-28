@@ -1,0 +1,9 @@
+[user]
+	email = naoyuki.kawano@nhk-mt.co.jp
+	name = Naoyuki Kawano
+[credential]
+	helper = store
+
+
+[core]
+	editor = vim -c \"set fenc=utf-8\"
