@@ -265,7 +265,6 @@ NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'croaker/mustang-vim'
 NeoBundle 'nanotech/jellybeans.vim'
-NeoBundle 'tomasr/molokai'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'vim-scripts/twilight'
 NeoBundle 'jonathanfilip/vim-lucius'
@@ -295,7 +294,7 @@ nnoremap ; :
 nnoremap : ;
 noremap j gj
 noremap k gk
-nnoremap <CR> o<Esc>
+" nnoremap <CR> o<Esc>
 
 
 map <silent> w <Plug>CamelCaseMotion_w
