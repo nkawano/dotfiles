@@ -279,7 +279,6 @@ let g:molokai_original=1
 " highlight CursorLine cterm=underline
 set cursorline
 highlight CursorLine term=reverse cterm=none ctermbg=237
-
 call neobundle#end()
 "
 " Required:
@@ -308,7 +307,6 @@ omap <silent> ib <Plug>CamelCaseMotion_ib
 vmap <silent> ib <Plug>CamelCaseMotion_ib
 omap <silent> ie <Plug>CamelCaseMotion_ie
 vmap <silent> ie <Plug>CamelCaseMotion_ie
-
 
 " inoremap { {}<Left>
 " autocmd FileType php inoremap <buffer> { {}<Left><CR><Esc><S-o>
