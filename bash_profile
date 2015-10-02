@@ -48,6 +48,17 @@ alias exp="explorer"
 alias gs="git status"
 alias gd="git diff"
 alias gdc="git diff --cached"
+alias vbox="VBoxManage.exe "
+alias vboxlist="VBoxManage.exe list vms"
+alias vboxup="VBoxManage.exe startvm --type headless "
+# alias vboxdown="VBoxManage.exe controlvm $1 acpipowerbutton"
+
+which cocot > /dev/null 2>&1
+if [ $? = 0 ] ; then
+    alias ping="cocot ping"
+    alias ipconfig="cocot ipconfig"
+fi
+
 
 source $HOME/.git-completion.bash
 source $HOME/.git-prompt.sh
@@ -78,3 +89,7 @@ export desktop="/cygdrive/c/Users/naokawano/Desktop"
 export dt="/cygdrive/c/Users/naokawano/Desktop"
 export doc="/cygdrive/c/Users/naokawano/Documents"
 export MANPAGER="/bin/sh -c \"col -b -x|vim -R -c 'set ft=man nolist nonu noma' -\""
+
+if [ -d /cygdrive/c ] ; then
+    export c=/cygdrive/c/
+fi

@@ -1,3 +1,4 @@
+set encoding=utf-8
 set nocompatible
 set notitle
 set backspace=indent,eol,start
@@ -17,7 +18,6 @@ set t_Co=256
 set background=dark
 set list
 set listchars=tab:>-,extends:>,precedes:<,nbsp:%
-set cursorline
 set noswapfile
 set hlsearch
 set clipboard+=unnamed
@@ -159,7 +159,6 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
-"NeoBundle 'Shougo/neosnippet.vim'
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -204,7 +203,6 @@ if executable('ag')
   let g:unite_source_grep_recursive_opt = ''
 endif
 
-
 NeoBundle 'Shougo/vimfiler.vim'
 " vimfiler
 let g:vimfiler_as_default_explorer = 1
@@ -215,7 +213,8 @@ NeoBundle 'tpope/vim-fugitive'
 nnoremap <silent> <Space>gb :Gblame<CR>
 nnoremap <silent> <Space>gd :Gdiff<CR>
 nnoremap <silent> <Space>gs :Gstatus<CR>
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+set laststatus=2
+set statusline+=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 "NeoBundle 'tpope/vim-fugitive' end
 
 NeoBundle 'cohama/agit.vim'
@@ -243,6 +242,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 "NeoBundle 'scrooloose/syntastic' end
 
+" NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'powerline/powerline'
 
 NeoBundle 'thinca/vim-ref'
 "NeoBundle 'thinca/vim-ref' start
@@ -253,13 +254,13 @@ NeoBundle 'tpope/vim-surround'
 
 
 NeoBundle 'kana/vim-smartinput'
+autocmd FileType php,javascript inoremap { {}<Left><CR><Esc><S-o>
 
 
 NeoBundle 'camelcasemotion'
 
 
-NeoBundle 'ujihisa/unite-colorscheme'
-
+" colorscheme
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'croaker/mustang-vim'
@@ -275,7 +276,9 @@ NeoBundle 'tomasr/molokai'
 
 colorscheme molokai
 let g:molokai_original=1
-highlight CursorLine cterm=underline
+" highlight CursorLine cterm=underline
+set cursorline
+highlight CursorLine term=reverse cterm=none ctermbg=237
 
 call neobundle#end()
 "
@@ -298,6 +301,13 @@ nnoremap <CR> o<Esc>
 
 map <silent> w <Plug>CamelCaseMotion_w
 map <silent> b <Plug>CamelCaseMotion_b
+
+omap <silent> iw <Plug>CamelCaseMotion_iw
+vmap <silent> iw <Plug>CamelCaseMotion_iw
+omap <silent> ib <Plug>CamelCaseMotion_ib
+vmap <silent> ib <Plug>CamelCaseMotion_ib
+omap <silent> ie <Plug>CamelCaseMotion_ie
+vmap <silent> ie <Plug>CamelCaseMotion_ie
 
 
 " inoremap { {}<Left>
@@ -347,5 +357,10 @@ augroup END
 
 autocmd Filetype php set tags=$HOME/cms/tags
 
+" 前回編集位置復元
+augroup vimrcEx
+  au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
+  \ exe "normal g`\"" | endif
+augroup END
 " ======================== originam key maps ====================
 
