@@ -43,6 +43,7 @@ fi
 #   INFOPATH="${HOME}/info:${INFOPATH}"
 # fi
 alias ls="ls --color=auto"
+alias ll="ls -l --color=auto"
 alias la="ls -la --color=auto"
 alias exp="explorer"
 alias gs="git status"
@@ -51,6 +52,7 @@ alias gdc="git diff --cached"
 alias vbox="VBoxManage.exe "
 alias vboxlist="VBoxManage.exe list vms"
 alias vboxup="VBoxManage.exe startvm --type headless "
+alias mygrep="find . -type f|xargs grep"
 # alias vboxdown="VBoxManage.exe controlvm $1 acpipowerbutton"
 
 which cocot > /dev/null 2>&1

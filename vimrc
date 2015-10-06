@@ -317,6 +317,7 @@ vmap <silent> ie <Plug>CamelCaseMotion_ie
 inoremap <CR> <CR><Esc>I
 
 vnoremap v $h
+vnoremap * <Esc>/\%V
 
 autocmd FileType xml,html inoremap < <><Left>
 
@@ -359,5 +360,8 @@ augroup vimrcEx
   au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
   \ exe "normal g`\"" | endif
 augroup END
-" ======================== originam key maps ====================
+" ======================== original key maps ====================
 
+" ======================== original commadn =====================
+" cnoremap mygrep read !find . -type f |xargs grep
+" ======================== original commadn =====================
