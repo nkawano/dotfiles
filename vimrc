@@ -261,17 +261,17 @@ NeoBundle 'camelcasemotion'
 
 
 " colorscheme
-NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'croaker/mustang-vim'
-NeoBundle 'nanotech/jellybeans.vim'
-NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'vim-scripts/twilight'
-NeoBundle 'jonathanfilip/vim-lucius'
-NeoBundle 'jpo/vim-railscasts-theme'
-NeoBundle 'vim-scripts/Wombat'
-NeoBundle 'vim-scripts/rdark'
-NeoBundle 'tomasr/molokai'
+" NeoBundle 'ujihisa/unite-colorscheme'
+" NeoBundle 'altercation/vim-colors-solarized'
+" NeoBundle 'croaker/mustang-vim'
+" NeoBundle 'nanotech/jellybeans.vim'
+" NeoBundle 'w0ng/vim-hybrid'
+" NeoBundle 'vim-scripts/twilight'
+" NeoBundle 'jonathanfilip/vim-lucius'
+" NeoBundle 'jpo/vim-railscasts-theme'
+" NeoBundle 'vim-scripts/Wombat'
+" NeoBundle 'vim-scripts/rdark'
+" NeoBundle 'tomasr/molokai'
 
 colorscheme molokai
 let g:molokai_original=1
