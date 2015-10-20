@@ -295,7 +295,10 @@ nnoremap : ;
 noremap j gj
 noremap k gk
 " nnoremap <CR> o<Esc>
-
+""
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+command Vexp Vexplore
+command Sexp Sexplore
 
 map <silent> w <Plug>CamelCaseMotion_w
 map <silent> b <Plug>CamelCaseMotion_b
