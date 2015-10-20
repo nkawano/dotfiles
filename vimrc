@@ -329,6 +329,7 @@ nnoremap <Space> <Nop>
 
 " nnoremap [tagjump] <Nop>
 " nnoremap <Space>j [tagjump]
+nnoremap <Space>je :e<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap <Space>jl :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap <Space>jj :split<CR> :exe("tjump ".expand('<cword>'))<CR>
 " nnoremap <Space>t :tabnew<CR> :exe("tjump ".expand('<cword>'))<CR>
