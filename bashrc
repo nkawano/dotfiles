@@ -213,6 +213,8 @@ which cocot > /dev/null 2>&1
 if [ $? = 0 ] ; then
     alias ping="cocot ping"
     alias ipconfig="cocot ipconfig"
+    alias httpd="cocot httpd"
+    alias php="cocot php"
 fi
 
 

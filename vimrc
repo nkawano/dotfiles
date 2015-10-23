@@ -13,6 +13,7 @@ set autoindent
 set smartindent
 set ignorecase
 set smartcase
+set incsearch
 set wrapscan
 set t_Co=256
 set background=dark
