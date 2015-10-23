@@ -5,6 +5,8 @@ set backspace=indent,eol,start
 set number
 set title
 set showmatch
+set showmode
+set showcmd
 syntax on
 set tabstop=4
 set expandtab
