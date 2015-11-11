@@ -31,6 +31,7 @@ set wildmode=list:longest
 set nrformats=
 set undofile
 set undodir=~/.vim/undo/
+set autochdir
 
 
 " Note: Skip initialization for vim-tiny or vim-small.
@@ -297,6 +298,12 @@ nnoremap ; :
 nnoremap : ;
 noremap j gj
 noremap k gk
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+cnoremap <C-a> <Home>
+cnoremap <C-h> <Backspace>
+cnoremap <C-d> <Del>
+cnoremap <C-e> <End>
 " nnoremap <CR> o<Esc>
 ""
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
