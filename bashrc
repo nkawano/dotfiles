@@ -215,6 +215,7 @@ if [ $? = 0 ] ; then
     alias ipconfig="cocot ipconfig"
     alias httpd="cocot httpd"
     alias php="cocot php"
+    alias xjc="cocot xjc"
 fi
 
 

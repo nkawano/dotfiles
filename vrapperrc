@@ -1,0 +1,21 @@
+set hlsearch
+set list
+set listchars=tab:>-,extends:>,precedes:<,nbsp:%
+set tabstop=4
+set expandtab
+set shiftwidth=4
+set softtabstop=0
+set autoindent
+set smartindent
+set ignorecase
+set smartcase
+set clipboard+=unnamed
+
+
+nnoremap ; :
+nnoremap : ;
+nnoremap <C-j> 5j
+nnoremap <C-k> 5k
+vnoremap <C-j> 5j
+vnoremap <C-k> 5k
+

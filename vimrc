@@ -298,6 +298,10 @@ nnoremap ; :
 nnoremap : ;
 noremap j gj
 noremap k gk
+nnoremap <C-j> 5j
+nnoremap <C-k> 5k
+vnoremap <C-j> 5j
+vnoremap <C-k> 5k
 cnoremap <C-b> <Left>
 cnoremap <C-f> <Right>
 cnoremap <C-a> <Home>
