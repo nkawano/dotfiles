@@ -31,7 +31,7 @@ set wildmode=list:longest
 set nrformats=
 set undofile
 set undodir=~/.vim/undo/
-set autochdir
+" set autochdir
 
 
 " Note: Skip initialization for vim-tiny or vim-small.
