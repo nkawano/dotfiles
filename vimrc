@@ -23,6 +23,7 @@ set list
 set listchars=tab:>-,extends:>,precedes:<,nbsp:%
 set noswapfile
 set hlsearch
+highlight Search ctermfg=Black ctermbg=Red cterm=NONE
 set clipboard+=unnamed
 set splitbelow
 set splitright
@@ -186,6 +187,8 @@ NeoBundle 'Shougo/neomru.vim'
 
 " insert modeで開始
 let g:unite_enable_start_insert = 1
+let g:unite_source_history_yank_enable = 1
+let g:unite_source_file_mru_limit = 200
 
 " 大文字小文字を区別しない
 let g:unite_enable_ignore_case = 1
@@ -199,6 +202,12 @@ nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W
 
 " grep検索結果の再呼出
 nnoremap <silent> ,r  :<C-u>UniteResume search-buffer<CR>
+
+nnoremap <silent> ,uy :<C-u>Unite history/yank<CR>
+nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
 
 " unite grep に ag(The Silver Searcher) を使う
 if executable('ag')
@@ -260,9 +269,22 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'kana/vim-smartinput'
 autocmd FileType php,javascript inoremap { {}<Left><CR><Esc><S-o>
 
+NeoBundle 'sjl/gundo.vim'
+nnoremap <F5> :GundoToggle<CR>
 
 NeoBundle 'camelcasemotion'
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
 
+omap <silent> iw <Plug>CamelCaseMotion_iw
+vmap <silent> iw <Plug>CamelCaseMotion_iw
+omap <silent> ib <Plug>CamelCaseMotion_ib
+vmap <silent> ib <Plug>CamelCaseMotion_ib
+omap <silent> ie <Plug>CamelCaseMotion_ie
+vmap <silent> ie <Plug>CamelCaseMotion_ie
+
+
+NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 
 " colorscheme
 " NeoBundle 'ujihisa/unite-colorscheme'
@@ -341,6 +363,7 @@ autocmd FileType xml,html inoremap < <><Left>
 " nnoremap [space] <Nop>
 nnoremap <Space> <Nop>
 
+
 " nnoremap [tagjump] <Nop>
 " nnoremap <Space>j [tagjump]
 nnoremap <Space>je :e<CR> :exe("tjump ".expand('<cword>'))<CR>
@@ -371,7 +394,7 @@ augroup MyXML
     autocmd Filetype html inoremap <buffer> </ </<C-x><C-o>
 augroup END
 
-autocmd Filetype php set tags=$HOME/cms/tags
+set tags=tags;
 
 " 前回編集位置復元
 augroup vimrcEx
