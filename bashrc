@@ -203,8 +203,11 @@ alias exp="explorer"
 alias gs="git status"
 alias gd="git diff"
 alias gdc="git diff --cached"
+alias gdno="git diff --name-only"
 alias ggraph="git log --graph --date=short --pretty=\"format:%C(yellow)%h %C(cyan)%ad %C(green)%an%Creset%x09%s %C(red)%d%Creset\" "
 alias vbox="VBoxManage.exe "
+#usage 
+#vbox controlvm <name> poweroff
 alias vboxlist="VBoxManage.exe list vms"
 alias vboxup="VBoxManage.exe startvm --type headless "
 alias mygrep="find . -type f|xargs grep"
@@ -239,5 +242,5 @@ source $HOME/.git-prompt.sh
  # \[ 表示させない文字列の開始
  # \] 表示させない文字列の終了
  # \$ $
-export PS1='\[\033[1;32m\]\u\[\033[00m\]:\[\033[1;34m\]\w\[\033[1;31m\]$(__git_ps1)\[\033[00m\] \$ '
+export PS1='\[\033[1;32m\]\u@\h\[\033[00m\]:\[\033[1;34m\]\w\[\033[1;31m\]$(__git_ps1)\[\033[00m\] \$ '
 #############
