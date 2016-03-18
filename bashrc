@@ -200,6 +200,7 @@ alias ls="ls --color=auto"
 alias ll="ls -l --color=auto"
 alias la="ls -la --color=auto"
 alias exp="explorer"
+alias ga="git branch -a"
 alias gs="git status"
 alias gd="git diff"
 alias gdc="git diff --cached"
@@ -220,6 +221,7 @@ if [ $? = 0 ] ; then
     alias httpd="cocot httpd"
     alias php="cocot php"
     alias xjc="cocot xjc"
+    alias tracert="cocot tracert"
 fi
 
 

@@ -32,6 +32,7 @@ set wildmode=list:longest
 set nrformats=
 set undofile
 set undodir=~/.vim/undo/
+set fileformat=unix
 " set autochdir
 
 
@@ -266,8 +267,8 @@ let g:ref_phpmanual_path=$HOME . '/.vim/php-ref/php-chunked-xhtml'
 NeoBundle 'tpope/vim-surround'
 
 
-NeoBundle 'kana/vim-smartinput'
-autocmd FileType php,javascript inoremap { {}<Left><CR><Esc><S-o>
+" NeoBundle 'kana/vim-smartinput'
+autocmd FileType php,javascript inoremap { {}<Left>
 
 NeoBundle 'sjl/gundo.vim'
 nnoremap <F5> :GundoToggle<CR>
@@ -283,6 +284,7 @@ vmap <silent> ib <Plug>CamelCaseMotion_ib
 omap <silent> ie <Plug>CamelCaseMotion_ie
 vmap <silent> ie <Plug>CamelCaseMotion_ie
 
+" NeoBundle 'gregsexton/VimCalc'
 
 NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 
@@ -330,8 +332,19 @@ cnoremap <C-a> <Home>
 cnoremap <C-h> <Backspace>
 cnoremap <C-d> <Del>
 cnoremap <C-e> <End>
+nnoremap <Tab> gt
+nnoremap <S-Tab> gT
 " nnoremap <CR> o<Esc>
-""
+"
+""" 挿入モードでのカーソル移動
+" inoremap <C-j> <Down>
+" inoremap <C-k> <Up>
+" inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+inoremap <C-d> <Del>
+inoremap <C-a> <Esc>^i
+inoremap <C-e> <Esc>$i
+
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 command Vexp Vexplore
 command Sexp Sexplore
