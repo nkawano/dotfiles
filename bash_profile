@@ -43,8 +43,9 @@ fi
 #   INFOPATH="${HOME}/info:${INFOPATH}"
 # fi
 
-export http_proxy=http://172.29.88.132:8080/
-export https_proxy=http://172.29.88.132:8080/
+if [ -e .bash-local-env ] ; then
+    source .bash-local-env
+fi
 
 # export MANPAGER="/bin/sh -c \"col -b -x|vim -R -c 'set ft=man nolist nonu noma' -\""
 export MANPAGER='less -R'
