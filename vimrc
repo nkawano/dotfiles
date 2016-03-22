@@ -17,7 +17,6 @@ set ignorecase
 set smartcase
 set incsearch
 set wrapscan
-set t_Co=256
 set background=dark
 set list
 set listchars=tab:>-,extends:>,precedes:<,nbsp:%
@@ -33,6 +32,7 @@ set nrformats=
 set undofile
 set undodir=~/.vim/undo/
 set fileformat=unix
+set laststatus=2
 " set autochdir
 
 
@@ -227,8 +227,9 @@ NeoBundle 'tpope/vim-fugitive'
 nnoremap <silent> <Space>gb :Gblame<CR>
 nnoremap <silent> <Space>gd :Gdiff<CR>
 nnoremap <silent> <Space>gs :Gstatus<CR>
-set laststatus=2
-set statusline+=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+if isdirectory(expand('~/.vim/bundle/vim-fugitive'))
+    set statusline+=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+endif
 "NeoBundle 'tpope/vim-fugitive' end
 
 NeoBundle 'cohama/agit.vim'
@@ -246,9 +247,12 @@ let g:better_whitespace_filetypes_blacklist = ['unite', 'vimfiler']
 
 NeoBundle 'scrooloose/syntastic'
 "NeoBundle 'scrooloose/syntastic' start
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"
+if isdirectory(expand('~/.vim/bundle/syntastic'))
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+endif
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -285,6 +289,7 @@ omap <silent> ie <Plug>CamelCaseMotion_ie
 vmap <silent> ie <Plug>CamelCaseMotion_ie
 
 " NeoBundle 'gregsexton/VimCalc'
+NeoBundle 'sudo.vim'
 
 NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 
@@ -302,6 +307,7 @@ NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascr
 " NeoBundle 'tomasr/molokai'
 
 colorscheme molokai
+set t_Co=256
 let g:molokai_original=1
 " highlight CursorLine cterm=underline
 set cursorline
@@ -334,6 +340,8 @@ cnoremap <C-d> <Del>
 cnoremap <C-e> <End>
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
+nnoremap <C-l> <C-w>>
+nnoremap <C-h> <C-w><
 " nnoremap <CR> o<Esc>
 "
 """ 挿入モードでのカーソル移動
