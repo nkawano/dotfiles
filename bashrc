@@ -207,6 +207,8 @@ alias gdc="git diff --cached"
 alias gdno="git diff --name-only"
 alias ggraph="git log --graph --date=short --pretty=\"format:%C(yellow)%h %C(cyan)%ad %C(green)%an%Creset%x09%s %C(red)%d%Creset\" "
 alias vbox="VBoxManage.exe "
+alias vi="vim"
+# alias sudo="sudo -E"
 #usage 
 #vbox controlvm <name> poweroff
 alias vboxlist="VBoxManage.exe list vms"
