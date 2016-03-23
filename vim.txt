@@ -1,0 +1,15 @@
+git clone https://github.com/vim/vim.git
+
+./configure --with-features=huge \
+--enable-multibyte \
+--enable-fontset \
+--with-lua-prefix=/usr/local \
+--with-luajit \
+\
+--enable-perlinterp \
+--enable-pythoninterp \
+--enable-rubyinterp \
+--with-python-config-dir=/usr/lib/python2.6/config \
+--enable-luainterp=dynamic \
+
+
