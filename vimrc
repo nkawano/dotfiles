@@ -23,7 +23,8 @@ set listchars=tab:>-,extends:>,precedes:<,nbsp:%
 set noswapfile
 set hlsearch
 highlight Search ctermfg=Black ctermbg=Red cterm=NONE
-set clipboard+=unnamed
+set clipboard&
+set clipboard^=unnamedplus
 set splitbelow
 set splitright
 set nf=""
