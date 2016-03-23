@@ -2,6 +2,7 @@
 ln -sf ~/dotfiles/bash_profile ~/.bash_profile
 ln -sf ~/dotfiles/bashrc ~/.bashrc
 ln -sf ~/dotfiles/vimrc ~/.vimrc
+ln -sf ~/dotfiles/ctags ~/.ctags
 # ln -sf ~/dotfiles/vim ~/.vim
 ln -sf ~/dotfiles/gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/git-completion.bash ~/.git-completion.bash
