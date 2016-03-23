@@ -1,0 +1,6 @@
+--append=yes
+--recurse=yes
+--php-kinds=cfid
+--langmap=PHP:+.inc
+--javascript-kinds=fcmpv
+--sh-kinds=f
