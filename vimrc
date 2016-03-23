@@ -290,6 +290,7 @@ vmap <silent> ie <Plug>CamelCaseMotion_ie
 
 " NeoBundle 'gregsexton/VimCalc'
 NeoBundle 'sudo.vim'
+NeoBundle 'joonty/vdebug'
 
 NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 
