@@ -23,8 +23,12 @@ set listchars=tab:>-,extends:>,precedes:<,nbsp:%
 set noswapfile
 set hlsearch
 highlight Search ctermfg=Black ctermbg=Red cterm=NONE
-set clipboard&
-set clipboard^=unnamedplus
+if has('win32unix')
+    set clipboard+=unnamed
+else
+    set clipboard&
+    set clipboard^=unnamedplus
+endif
 set splitbelow
 set splitright
 set nf=""
