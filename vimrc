@@ -346,8 +346,12 @@ cnoremap <C-d> <Del>
 cnoremap <C-e> <End>
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
-nnoremap <C-l> <C-w>>
-nnoremap <C-h> <C-w><
+" nnoremap <C-l> <C-w>>
+" nnoremap <C-h> <C-w><
+nnoremap <C-Left> <C-w><
+nnoremap <C-Right> <C-w>>
+nnoremap <C-Up> <C-w>-
+nnoremap <C-Down> <C-w>+
 " nnoremap <CR> o<Esc>
 "
 """ 挿入モードでのカーソル移動
