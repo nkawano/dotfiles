@@ -301,6 +301,8 @@ autocmd BufEnter *
 \   if empty(&buftype)
 \|      nnoremap <buffer> <C-t> :<C-u>Unite jump<CR>
 \|  endif
+
+NeoBundle 'tacroe/unite-mark'
 " colorscheme
 " NeoBundle 'ujihisa/unite-colorscheme'
 " NeoBundle 'altercation/vim-colors-solarized'
