@@ -283,15 +283,6 @@ NeoBundle 'sjl/gundo.vim'
 nnoremap <F5> :GundoToggle<CR>
 
 NeoBundle 'camelcasemotion'
-map <silent> w <Plug>CamelCaseMotion_w
-map <silent> b <Plug>CamelCaseMotion_b
-
-omap <silent> iw <Plug>CamelCaseMotion_iw
-vmap <silent> iw <Plug>CamelCaseMotion_iw
-omap <silent> ib <Plug>CamelCaseMotion_ib
-vmap <silent> ib <Plug>CamelCaseMotion_ib
-omap <silent> ie <Plug>CamelCaseMotion_ie
-vmap <silent> ie <Plug>CamelCaseMotion_ie
 
 " NeoBundle 'gregsexton/VimCalc'
 NeoBundle 'sudo.vim'
@@ -367,15 +358,6 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 command Vexp Vexplore
 command Sexp Sexplore
 
-map <silent> w <Plug>CamelCaseMotion_w
-map <silent> b <Plug>CamelCaseMotion_b
-
-omap <silent> iw <Plug>CamelCaseMotion_iw
-vmap <silent> iw <Plug>CamelCaseMotion_iw
-omap <silent> ib <Plug>CamelCaseMotion_ib
-vmap <silent> ib <Plug>CamelCaseMotion_ib
-omap <silent> ie <Plug>CamelCaseMotion_ie
-vmap <silent> ie <Plug>CamelCaseMotion_ie
 
 " inoremap { {}<Left>
 " autocmd FileType php inoremap <buffer> { {}<Left><CR><Esc><S-o>
