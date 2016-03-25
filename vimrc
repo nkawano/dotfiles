@@ -214,6 +214,7 @@ nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
+nnoremap <silent> ,um :<C-u>Unite mark<CR>
 
 " unite grep に ag(The Silver Searcher) を使う
 if executable('ag')
