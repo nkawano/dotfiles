@@ -290,6 +290,17 @@ NeoBundle 'joonty/vdebug'
 
 NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 
+NeoBundle 'tsukkee/unite-tag'
+
+autocmd BufEnter *
+\   if empty(&buftype)
+\|      nnoremap <buffer> <C-]> :<C-u>UniteWithCursorWord -immediately tag<CR>
+\|  endif
+
+autocmd BufEnter *
+\   if empty(&buftype)
+\|      nnoremap <buffer> <C-t> :<C-u>Unite jump<CR>
+\|  endif
 " colorscheme
 " NeoBundle 'ujihisa/unite-colorscheme'
 " NeoBundle 'altercation/vim-colors-solarized'
