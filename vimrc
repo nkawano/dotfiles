@@ -39,7 +39,11 @@ set undodir=~/.vim/undo/
 set fileformat=unix
 set laststatus=2
 " set autochdir
-
+augroup auto_comment_off
+	autocmd!
+	autocmd BufEnter * setlocal formatoptions-=r
+	autocmd BufEnter * setlocal formatoptions-=o
+augroup END
 
 " Note: Skip initialization for vim-tiny or vim-small.
 if 0 | endif
@@ -358,6 +362,10 @@ nnoremap <C-Right> <C-w>>
 nnoremap <C-Up> <C-w>-
 nnoremap <C-Down> <C-w>+
 " nnoremap <CR> o<Esc>
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+nmap # #zz
 "
 """ 挿入モードでのカーソル移動
 " inoremap <C-j> <Down>
