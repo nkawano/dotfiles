@@ -241,6 +241,7 @@ if isdirectory(expand('~/.vim/bundle/vim-fugitive'))
     set statusline+=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 endif
 "NeoBundle 'tpope/vim-fugitive' end
+NeoBundle 'kmnk/vim-unite-giti.git'
 
 NeoBundle 'cohama/agit.vim'
 
