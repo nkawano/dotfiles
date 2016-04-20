@@ -42,6 +42,9 @@ fi
 # if [ -d "${HOME}/info" ]; then
 #   INFOPATH="${HOME}/info:${INFOPATH}"
 # fi
+if [ -d "/usr/local/git/bin" ] ; then
+  PATH="/usr/local/git/bin:${PATH}"
+fi
 
 if [ -e .bash-local-env ] ; then
     source .bash-local-env
