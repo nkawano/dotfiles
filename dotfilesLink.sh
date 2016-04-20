@@ -4,7 +4,7 @@ ln -sf ~/dotfiles/bashrc ~/.bashrc
 ln -sf ~/dotfiles/vimrc ~/.vimrc
 ln -sf ~/dotfiles/ctags ~/.ctags
 # ln -sf ~/dotfiles/vim ~/.vim
-ln -sf ~/dotfiles/gitconfig ~/.gitconfig
+# ln -sf ~/dotfiles/gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/git-completion.bash ~/.git-completion.bash
 ln -sf ~/dotfiles/git-prompt.sh ~/.git-prompt.sh
 # ln -sf ~/dotfiles/ftdetect ~/.vim
