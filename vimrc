@@ -322,6 +322,8 @@ NeoBundle 'tacroe/unite-mark'
 " NeoBundle 'vim-scripts/rdark'
 " NeoBundle 'tomasr/molokai'
 
+NeoBundle 'valloric/matchtagalways'
+
 colorscheme molokai
 set t_Co=256
 let g:molokai_original=1
@@ -429,6 +431,18 @@ augroup MyXML
     autocmd Filetype xml inoremap <buffer> </ </<C-x><C-o>
     autocmd Filetype html inoremap <buffer> </ </<C-x><C-o>
 augroup END
+
+command! -nargs=? Jq call s:Jq(<f-args>)
+function! s:Jq(...)
+    if 0 == a:0
+        let l:arg = "."
+    else
+        let l:arg = a:1
+    endif
+    " execute "%! jq 95fe1a73-e2e2-4737-bea1-a44257c50fc8quot;" . l:arg . "95fe1a73-e2e2-4737-bea1-a44257c50fc8quot;"
+    execute "%! jq " .  l:arg
+endfunction
+command Prettify :%s/></>\r</g | filetype indent on | setf xml | normal gg=G
 
 set tags=tags;
 
