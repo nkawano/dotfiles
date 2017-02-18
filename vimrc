@@ -81,10 +81,10 @@ NeoBundle 'Shougo/vimproc.vim', {
             \     'unix' : 'gmake',
             \    },
             \ }
-NeoBundle 'Shougo/vimshell.vim'
-let g:vimshell_prompt_expr = 'getcwd()." > "'
-let g:vimshell_prompt_pattern = '^\f\+ > '
-
+" NeoBundle 'Shougo/vimshell.vim'
+" let g:vimshell_prompt_expr = 'getcwd()." > "'
+" let g:vimshell_prompt_pattern = '^\f\+ > '
+"
 NeoBundle 'Shougo/neocomplete.vim'
 " ===================== neocomplete =========================================
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
@@ -172,26 +172,26 @@ endif
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 " ===================== neocomplete =========================================
 
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<TAB>" : "\<Plug>(neosnippet_expand_or_jump)"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-
+" NeoBundle 'Shougo/neosnippet.vim'
+" NeoBundle 'Shougo/neosnippet-snippets'
+" " Plugin key-mappings.
+" imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+" smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+" xmap <C-k>     <Plug>(neosnippet_expand_target)
+"
+" " SuperTab like snippets behavior.
+" "imap <expr><TAB>
+" " \ pumvisible() ? "\<C-n>" :
+" " \ neosnippet#expandable_or_jumpable() ?
+" " \    "\<TAB>" : "\<Plug>(neosnippet_expand_or_jump)"
+" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+" \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+"
+" " For conceal markers.
+" if has('conceal')
+"   set conceallevel=2 concealcursor=niv
+" endif
+"
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 
@@ -243,7 +243,7 @@ endif
 "NeoBundle 'tpope/vim-fugitive' end
 NeoBundle 'kmnk/vim-unite-giti.git'
 
-NeoBundle 'cohama/agit.vim'
+" NeoBundle 'cohama/agit.vim'
 
 NeoBundle 'tomtom/tcomment_vim'
 
@@ -323,6 +323,8 @@ NeoBundle 'tacroe/unite-mark'
 " NeoBundle 'tomasr/molokai'
 
 NeoBundle 'valloric/matchtagalways'
+
+NeoBundle "ctrlpvim/ctrlp.vim"
 
 colorscheme molokai
 set t_Co=256

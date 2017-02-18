@@ -207,6 +207,7 @@ alias gdno="git diff --name-only"
 alias ggraph="git log --graph --date=short --pretty=\"format:%C(yellow)%h %C(cyan)%ad %C(green)%an%Creset%x09%s %C(red)%d%Creset\" "
 alias vbox="VBoxManage.exe "
 alias vi="vim"
+# alias composer="composer -c "
 # alias sudo="sudo -E"
 #usage 
 #vbox controlvm <name> poweroff
@@ -250,3 +251,40 @@ source $HOME/.git-prompt.sh
  # \$ $
 export PS1='\[\033[1;32m\]\u@\h\[\033[00m\]:\[\033[1;34m\]\w\[\033[1;31m\]$(__git_ps1)\[\033[00m\] \$ '
 #############
+export NLS_LANG=Japanese_Japan.AL32UTF8
+
+
+function phpunit
+{
+    local root="${PWD}"
+
+    while [ -n "${root}" ]; do
+        if [ -x "${root}/vendor/bin/phpunit" ]; then
+            break
+        fi
+        root="${root%/*}"
+    done
+
+    if [ -z "${root}" ]; then
+        command phpunit "$@"
+        return $?
+    fi
+
+    local cmd=("${root}/vendor/bin/phpunit")
+
+    local dir xml
+
+    for dir in "/tests/" "/" ; do
+        for xml in "phpunit.xml.dist" "phpunit.xml"; do
+            if [ -e "${root}${dir}${xml}" ]; then
+                cmd=("${cmd[@]}" "--configuration=${root}${dir}")
+                break 2
+            fi
+        done
+    done
+
+    cmd=("${cmd[@]}" "--colors")
+
+    "${cmd[@]}" "$@" | cat
+    return ${PIPESTATUS[0]}
+}
