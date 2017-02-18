@@ -326,6 +326,47 @@ NeoBundle 'valloric/matchtagalways'
 
 NeoBundle "ctrlpvim/ctrlp.vim"
 
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
+NeoBundle "osyo-manga/shabadou.vim"
+
+NeoBundle "thinca/vim-quickrun"
+
+if !exists("g:quickrun_config")
+    let g:quickrun_config = {}
+endif
+let g:quickrun_config['_'] = {
+\ 'runner'                                 : 'vimproc',
+\ 'runner/vimproc/updatetime'              : 50,
+\ 'outputter'                              : 'multi:buffer:quickfix',
+\ 'outputter/buffer/split'                 : 'botright 8sp',
+\ 'hook/close_quickfix/enable_hook_loaded' : 1,
+\ 'hook/close_quickfix/enable_success'     : 1,
+\ 'hook/close_buffer/enable_failure'       : 1,
+\}
+
+let g:quickrun_config['php.phpunit'] = {
+\ 'hook/cd/directory'              : '%S:p:h',
+\ 'command'                        : 'phpunit.sh',
+\ 'cmdopt'                         : '',
+\ 'exec'                           : '%c %o %s',
+\ 'outputter/quickfix/errorformat' : '%f:%l',
+\}
+
+" NeoBundle 'SirVer/ultisnips'
+NeoBundle 'tobyS/vmustache'
+NeoBundle 'tobyS/pdv'
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
+" inoremap <C-c> <Esc>:call pdv#DocumentWithSnip()<CR><ESC>
+inoremap <C-c> <Esc>:call pdv#DocumentCurrentLine()<CR><ESC>
+
 colorscheme molokai
 set t_Co=256
 let g:molokai_original=1
@@ -433,6 +474,12 @@ augroup MyXML
     autocmd Filetype xml inoremap <buffer> </ </<C-x><C-o>
     autocmd Filetype html inoremap <buffer> </ </<C-x><C-o>
 augroup END
+
+
+augroup PHPunit
+    autocmd!
+augroup END
+autocmd PHPunit BufNewFile,BufRead *Test.php setlocal ft=php.phpunit
 
 command! -nargs=? Jq call s:Jq(<f-args>)
 function! s:Jq(...)
